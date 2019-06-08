@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="sell.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+        .btn {
+          background-color:white;
+          border: none;
+          color: DodgerBlue;
+          padding: 12px 16px;
+          font-size: 16px;
+          cursor: pointer;
+        }
+        
+        /* Darker background on mouse-over */
+        .btn:hover {
+          background-color: RoyalBlue;
+        }
+        body{
+          background-repeat: no-repeat;
+        }
+        </style>
+</head>
+
+    <body background="web.jpeg">
+
+        <a href="index.html"><button class="btn">
+            <i class="fa fa-home"></i> Home</button></a>
+
+         <a href="upload.html" ><button class="btn" style="float:right">
+            <i class="fa fa-home"></i> Upload</button></a>
+            
+         <a href="download.html"><button class="btn" style="float:right">
+            <i class="fa fa-home"></i> Download</button></a>
+
+            <a href="booking.html"><button class="btn" style="float:right">
+                   <i class="fa fa-home"></i> Search Books</button></a>
+        
+        <h1>Sell Book</h1>
+      <center><h2 style="color:white"> Books available for sell </h2></center>
+        <div class="content">
+
+            <form id="add-book-form">
+            <input type="text" name="name" placeholder="Seller name">
+            <input type="text" name="bookname" placeholder="Book name">
+            <input type="tel" name="contact" placeholder=" Contact" maxlength="10" minlength="10">
+            <button>Add Book</button>
+            </form>
+
+            <ul id="book-list"></ul>
+
+        </div>
+  
+        <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase-firestore.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBlr8Syh2bwEHKbF7IKhsArsexrAvv_OwE",
+    authDomain: "book-sharing-27381.firebaseapp.com",
+    databaseURL: "https://book-sharing-27381.firebaseio.com",
+    projectId: "book-sharing-27381",
+    storageBucket: "book-sharing-27381.appspot.com",
+    messagingSenderId: "745323790230"
+  };
+  firebase.initializeApp(config);
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+</script>
+        <script src="sell.js"></script>
+    </body>
+</html>
